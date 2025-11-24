@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title or "NekoNews 🐾 Anime Fake News Detector" }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+
+    <!-- Neon Background -->
+    <style>
+        body {
+            background: radial-gradient(circle at 20% 20%, #0a0615, #05030b 60%, #000);
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="nk-header neon-header">
+        <div class="nk-logo">NekoNews 🐾</div>
+
+        <img src="{{ url_for('static', filename='img/mascot_idle.png') }}"
+             class="nk-mascot" id="mascot">
+
+        <nav class="nk-nav">
+            <a href="{{ url_for('home') }}" class="{% if active_page == 'home' %}active{% endif %}">Home</a>
+            <a href="{{ url_for('search') }}" class="{% if active_page == 'search' %}active{% endif %}">Search</a>
+            <a href="{{ url_for('browse') }}" class="{% if active_page == 'browse' %}active{% endif %}">Browse Anime</a>
+        </nav>
+    </header>
+
+    <main class="nk-main">
+        {% block content %}{% endblock %}
+    </main>
+
+    <script src="{{ url_for('static', filename='js/mascot.js') }}"></script>
+
+    <footer class="nk-footer">
+        <p>
+            © 2025. Eduard Donea 🐾 All rights reserved.<br>
+            Project created for <strong>TCRI</strong> (MPI — UNSTPB).
+        </p>
+    </footer>
+
+</body>
+</html>

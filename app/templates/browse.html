@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 class="page-title">Browse by anime</h1>
+
+<form method="POST" class="search-form">
+    <input type="text" name="anime" placeholder="My Hero Academia"
+           value="{{ anime or '' }}" />
+    <button type="submit">Browse</button>
+</form>
+
+{% if stats %}
+<p class="stats">
+    Results for "<strong>{{ anime }}</strong>":
+    real={{ stats.real or 0 }}, rumor={{ stats.rumor or 0 }}, fake={{ stats.fake or 0 }}
+</p>
+{% endif %}
+
+<ul class="browse-list">
+    {% for item in results %}
+    <li>
+        <span class="tag label-{{ item.label }}">[{{ item.label }}]</span>
+        <a href="{{ item.url }}" target="_blank">{{ item.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

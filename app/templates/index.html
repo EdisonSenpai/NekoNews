@@ -1,0 +1,29 @@
+<!-- app/templates/index.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<section id="tab-home" class="tab-content active">
+    <h2>Highlights</h2>
+    <div id="highlights-container">
+        <!-- filled by JS from /api/highlights -->
+    </div>
+</section>
+
+<section id="tab-search" class="tab-content">
+    <h2>Search news credibility</h2>
+    <div class="search-box">
+        <input id="search-input" type="text" placeholder="Is Demon Slayer Season 5 confirmed?">
+        <button id="search-button">Detect</button>
+    </div>
+    <div id="search-result"></div>
+</section>
+
+<section id="tab-anime" class="tab-content">
+    <h2>Browse by anime</h2>
+    <div class="search-box">
+        <input id="anime-input" type="text" placeholder="e.g. Naruto, Jujutsu Kaisen">
+        <button id="anime-button">Browse</button>
+    </div>
+    <div id="anime-result"></div>
+</section>
+{% endblock %}

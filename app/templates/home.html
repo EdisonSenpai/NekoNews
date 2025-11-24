@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1 class="page-title">Highlights</h1>
+
+<div class="columns-3">
+    <section>
+        <h2 class="section-title real">REAL</h2>
+        {% for item in real_news %}
+        <article class="news-card news-real">
+            <h3><a href="{{ item.url }}" target="_blank">{{ item.title }}</a></h3>
+            <p>{{ item.text }}</p>
+        </article>
+{% endfor %}
+    </section>
+
+    <section>
+        <h2 class="section-title rumor">RUMOR</h2>
+        {% for item in rumor_news %}
+        <article class="news-card news-rumor">
+            <h3><a href="{{ item.url }}" target="_blank">{{ item.title }}</a></h3>
+            <p>{{ item.text }}</p>
+        </article>
+        {% endfor %}
+    </section>
+
+    <section>
+        <h2 class="section-title fake">FAKE</h2>
+        {% for item in fake_news %}
+        <article class="news-card news-fake">
+            <h3><a href="{{ item.url }}" target="_blank">{{ item.title }}</a></h3>
+            <p>{{ item.text }}</p>
+        </article>
+        {% endfor %}
+    </section>
+</div>
+
+<div class="gif-box">
+    <iframe src="https://media.gifdb.com/neko-girl-asleep-j7og56cs5jw8opjg.gif"
+            width="500"
+            height="450"
+            frameborder="0">
+    </iframe>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,12 @@
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+feedparser
+praw
+python-dotenv
+requests
+beautifulsoup4
+tqdm
+joblib

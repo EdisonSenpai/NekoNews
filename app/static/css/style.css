@@ -1,0 +1,356 @@
+/* ===========================
+   NEKONEWS – ANIME AESTHETIC THEME
+   =========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Nunito:wght@300;400;700&display=swap');
+
+:root {
+    --bg-dark: #0d0b14;
+    --bg-card: #16121f;
+    --bg-card-hover: #221b31;
+    --pink: #ff3fa4;
+    --pink-soft: #ff7cc8;
+    --purple: #9b5eff;
+    --purple-soft: #c79bff;
+    --cyan: #4ef4ff;
+    --real: #3bff82;
+    --rumor: #ffb628;
+    --fake: #ff386a;
+    --text-main: #f2eaff;
+    --text-dim: #b8a8d9;
+    --radius: 14px;
+    --transition: 0.25s ease;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text-main);
+    font-family: 'Poppins', sans-serif;
+    margin: 35px;
+}
+
+/* ===========================
+   HEADER NAVBAR
+   =========================== */
+
+.nk-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 38px;
+    background: rgba(20, 15, 30, 0.6);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.nk-logo {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--pink);
+    text-shadow: 0 0 12px var(--pink-soft);
+}
+
+.nk-nav {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.nk-nav a {
+    text-decoration: none;
+    border-bottom: none;
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-weight: 600;
+    color: #d6c9ff;
+    transition: 0.25s ease;
+    background: transparent;
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 77, 166, 0.25);
+}
+
+.nk-nav a:hover {
+    background: rgba(255, 77, 166, 0.25);
+    color: #ff7adf;
+    box-shadow: 0 0 10px rgba(255, 77, 166, 0.4);
+}
+
+.nk-nav a.active {
+    background: linear-gradient(90deg, #ff5ec4, #ff2e93);
+    color: white;
+    box-shadow: 0 0 15px rgba(255, 77, 166, 0.7);
+}
+
+/* ===========================
+   PAGE TITLES
+   =========================== */
+
+.page-title {
+    font-size: 34px;
+    font-weight: 700;
+    margin: 30px 0 10px;
+    text-shadow: 0 0 14px var(--purple);
+}
+
+/* ===========================
+   GRID LAYOUT
+   =========================== */
+
+.columns-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+    padding: 10px;
+}
+
+/* ===========================
+   NEWS CARDS
+   =========================== */
+
+.news-card {
+    background: var(--bg-card);
+    padding: 18px 22px;
+    border-radius: var(--radius);
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: var(--transition);
+}
+
+.news-card:hover {
+    background: var(--bg-card-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 0 18px rgba(255, 62, 211, 0.25);
+}
+
+.news-card h3 a {
+    color: var(--purple-soft);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.news-card h3 a:hover {
+    color: var(--pink);
+    text-shadow: 0 0 12px var(--pink-soft);
+}
+
+.news-card p {
+    color: var(--text-dim);
+}
+
+/* ===========================
+   LABEL BADGES
+   =========================== */
+
+.tag, .label {
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.label-real, .tag-real { background: var(--real); color: #002a0f; }
+.label-rumor, .tag-rumor { background: var(--rumor); color: #2e1900; }
+.label-fake, .tag-fake { background: var(--fake); color: #2e000a; }
+
+/* ===========================
+   SEARCH + INPUTS
+   =========================== */
+
+.search-form input,
+.search-box input {
+    width: 60%;
+    padding: 12px 14px;
+    border-radius: var(--radius);
+    border: none;
+    font-size: 16px;
+    background: #1d1626;
+    color: var(--text-main);
+    outline: none;
+}
+
+button {
+    padding: 12px 22px;
+    margin-left: 10px;
+    background: var(--pink);
+    border: none;
+    color: #fff;
+    border-radius: var(--radius);
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+button:hover {
+    background: var(--purple);
+    box-shadow: 0 0 14px var(--purple-soft);
+}
+
+/* ===========================
+   SIMILAR LIST / BROWSE LIST
+   =========================== */
+
+.similar-list li,
+.browse-list li {
+    padding: 10px 6px;
+    list-style: none;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.similar-list li a,
+.browse-list li a {
+    color: var(--purple-soft);
+    text-decoration: none;
+}
+
+.similar-list li a:hover,
+.browse-list li a:hover {
+    color: var(--pink);
+    text-shadow: 0 0 12px var(--pink);
+}
+
+
+/* ===========================
+   ADDITIONAL STYLES
+   =========================== */
+.nk-mascot {
+    position: absolute;
+    top: 100px;
+    right: 70px;
+    width: 100px;
+    filter: drop-shadow(0 0 8px #ff6bcb);
+    animation: float 3s ease-in-out infinite;
+    pointer-events: auto;
+    cursor: pointer;
+    transition: opacity 0.25s ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+}
+
+.pulse-wave {
+    animation: pulsewave 1.6s ease-out;
+}
+
+@keyframes pulsewave {
+    0% { box-shadow: 0 0 0px #ff2ad4; }
+    50% { box-shadow: 0 0 22px #ff2ad4; }
+    100% { box-shadow: 0 0 0px #ff2ad4; }
+}
+
+.news-link {
+    color: #b28aff;
+    text-decoration: none;
+}
+.news-link:hover {
+    color: #ff6bcb;
+    text-shadow: 0 0 8px #ff6bcb;
+}
+
+.gif-box iframe {
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255, 0, 200, 0.4);
+    display: block;
+    margin: 0 auto;
+}
+
+#mascot {
+    transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+
+#mascot.awake,
+#mascot.idle {
+    opacity: 1;
+}
+
+/* ===========================
+   FOOTER STYLES
+   =========================== */
+
+.nk-footer {
+    text-align: center;
+    padding: 18px 0;
+    font-size: 0.9rem;
+    color: #ccc;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(6px);
+}
+
+.nk-footer strong {
+    color: #ff66cc;
+}
+
+/* ===========================
+   CUSTOM SCROLLBAR
+   =========================== */
+
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #ff4bbd #120a1b;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #120a1b;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #ff6bd6, #ff2ea6);
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(255, 77, 166, 0.7);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, #ff89e6, #ff42be);
+    box-shadow: 0 0 12px rgba(255, 77, 166, 1);
+}
+
+/* ===========================
+   RESPONSIVE DESIGN
+   =========================== */
+
+.section-title.real { color: var(--real); }
+.section-title.rumor { color: var(--rumor); }
+.section-title.fake { color: var(--fake); }
+
+.news-real {
+    border-left: 4px solid var(--real);
+}
+
+.news-rumor {
+    border-left: 4px solid var(--rumor);
+}
+
+.news-fake {
+    border-left: 4px solid var(--fake);
+}
+
+
+.news-real:hover {
+    box-shadow: 0 0 16px rgba(59, 255, 130, 0.45);
+}
+
+.news-rumor:hover {
+    box-shadow: 0 0 16px rgba(255, 182, 40, 0.45);
+}
+
+.news-fake:hover {
+    box-shadow: 0 0 16px rgba(255, 56, 106, 0.45);
+}
+
+.news-real h3 a { color: var(--real); }
+.news-rumor h3 a { color: var(--rumor); }
+.news-fake h3 a { color: var(--fake); }
+
+.news-real h3 a:hover,
+.news-rumor h3 a:hover,
+.news-fake h3 a:hover {
+    text-shadow: 0 0 12px currentColor;
+}
